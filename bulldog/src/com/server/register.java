@@ -1,12 +1,16 @@
 package com.server;
 import com.connection.*;
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import net.codejava.email.*;
+
 /**
  * Servlet implementation class register
  */
@@ -16,6 +20,11 @@ public class register extends HttpServlet {
 	private Connection con;
 	private static final String qry = "INSERT INTO users(name,contact,password) "+
 			" VALUES(?,?,?) ";
+	
+    private String host;
+    private String port;
+    private String user;
+    private String pass;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -25,6 +34,15 @@ public class register extends HttpServlet {
         // TODO Auto-generated constructor stub
 		con = ConnectionManager.getConnection();
 
+    }
+ 
+    public void init() {
+        // reads SMTP server setting from web.xml file
+        ServletContext context = getServletContext();
+        host = context.getInitParameter("host");
+        port = context.getInitParameter("port");
+        user = context.getInitParameter("user");
+        pass = context.getInitParameter("pass");
     }
 
 	/**
@@ -53,6 +71,20 @@ public class register extends HttpServlet {
 			ps.setString(3, pin);
 			ps.executeUpdate();
 			con.commit();
+			
+			// send email
+	        String recipient = request.getParameter("contact");
+	        String subject = request.getParameter("username");
+	        String content = request.getParameter("pin");
+	        
+	        String thank = null;
+	        if(content != null)
+	        	thank = "3Q you for register";
+	        String resultMessage = "";
+	        
+	        EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
+                    thank);
+            resultMessage = "The e-mail was sent successfully";
 			
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
