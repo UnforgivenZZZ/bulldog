@@ -1,6 +1,10 @@
 package com.server;
 import com.connection.*;
 import java.io.IOException;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +20,20 @@ public class register extends HttpServlet {
 	private Connection con;
 	private static final String qry = "INSERT INTO users(name,contact,password) "+
 			" VALUES(?,?,?) ";
+	
+    private String host;
+    private String port;
+    private String user;
+    private String pass;
+ 
+    public void init() {
+        // reads SMTP server setting from web.xml file
+        ServletContext context = getServletContext();
+        host = context.getInitParameter("host");
+        port = context.getInitParameter("port");
+        user = context.getInitParameter("user");
+        pass = context.getInitParameter("pass");
+    }
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,7 +50,7 @@ public class register extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/signup.html").forward(request, response);
+		request.getRequestDispatcher("/regist.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,8 +62,22 @@ public class register extends HttpServlet {
 		String contact = request.getParameter("contact");
 		String pin = request.getParameter("pin");
 		String uname = request.getParameter("username");
+		String err = "";
 		
 		try{
+			if(registerCon.check(con, contact, uname)) {
+			
+	        String recipient = request.getParameter("contact");
+	        String subject = request.getParameter("username");
+	        String content = request.getParameter("pin");
+	     
+	        String thank = "";
+	        if(content != null)
+	        	thank = "3Q you for register";
+	        
+	        EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
+                    thank);
+	        
 			con.setAutoCommit(false);
 			ps = con.prepareStatement(qry);
 			ps.setString(1, uname);
@@ -54,8 +86,22 @@ public class register extends HttpServlet {
 			ps.executeUpdate();
 			con.commit();
 			
-		}catch(Exception ex){
+			}else{
+				err = "email or user name already taken";
+			}
+			
+		}catch(SQLException ex){
 			System.out.println(ex.getMessage());
+
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			err = "invalid email address";
+			e.printStackTrace();
+			
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			err = "message not send, plz check if ur email is correct";
+			e.printStackTrace();
 		}finally{
 			try{
 				con.setAutoCommit(true);
@@ -64,6 +110,8 @@ public class register extends HttpServlet {
 				System.out.println(ex.getMessage());
 
 			}
+			request.getSession().setAttribute("err", err);
+			response.sendRedirect("http://localhost:8080/bulldog/register");
 		}
 	}
 
