@@ -1,0 +1,6 @@
+server.port: 8088
+spring.thymeleaf.cache=false
+
+paypal.mode=sandbox
+paypal.client.app=AeVqmY_pxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxKYniPwzfL1jGR
+paypal.client.secret=ELibZhExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxUsWOA_-
