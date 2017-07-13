@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Send an e-mail</title>
+</head>
+<body>
+    <form action="adding" method="post">
+        <table border="0" width="45%" align="center">
+            <caption><h2>Adding a new item</h2></caption>
+             <tr>
+                <td width="50%">ID: </td>
+                <td><input type="text" placeholder="id" name="_id"></td>
+            </tr>
+             <tr>
+                <td width="50%">Sku: </td>
+                <td><input type="text" placeholder="Sku" name="_Sku"></td>
+            </tr>
+            <tr>
+                <td>Picture url: </td>
+                <td><input type="text" placeholder="Picture url" name="_Pictureurl"></td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" placeholder="Name" name="_Name"></td>
+            </tr>
+            <tr>
+                <td>Delivery: </td>
+                <td><input type="text" placeholder="Delivery" name="_Delivery"></td>
+            </tr>
+             <tr>
+                <td>Price: </td>
+                <td><input type="text" placeholder="Delivery" name="_price"></td>
+            </tr>
+            
+        
+			<br/>
+
+            <tr>
+            <!-- change to onlick cannot proces if not working with duplicate -->
+                <td colspan="2" align="center"><input type="Submit" value="Add item" /></td>
+            </tr>
+        </table>
+         
+    </form>
+</body>
+</html>
