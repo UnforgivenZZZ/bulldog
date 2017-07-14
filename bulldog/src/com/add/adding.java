@@ -50,7 +50,7 @@ public class adding extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/addingitem.html").forward(request, response);
+		request.getRequestDispatcher("/addingitem.jsp").forward(request, response);
 	}
 
 	/**

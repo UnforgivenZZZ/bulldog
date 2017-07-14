@@ -1,0 +1,114 @@
+<html>
+
+
+<head>
+	<title>Update Student</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/add-student-style.css">
+</head>
+
+<body>
+
+	<div id ="wrapper">
+		<div id ="header">
+			<h2>Update product page</h2>
+		</div>
+	</div>
+
+	<div id="container">
+		<h3>Update Product</h3>
+		<form action="productControllerServlet" method="GET">
+			<input type ="hidden" name ="command" value ="UPDATE"/>
+			<input type ="hidden" name ="productId" value ="${THE_PRODUCT.id}"/>
+			<table>
+				<tbody>
+				
+				
+				
+				<!-- <!-- id,sku,pic,name,pict,price,delieverFee,descript,seller,categ,postDate   -->	
+					<tr>
+						<td><label>id:</label></td>
+						<td><input type="text" name="id" 
+							value = "${THE_PRODUCT.getId()}"/></td>
+					</tr>	
+					
+					<tr>
+						<td><label>sku:</label></td>
+						<td><input type="text" name="sku" 
+							value = "${THE_PRODUCT.getSku()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>pic:</label></td>
+						<td><input type="text" name="pic" 
+							value = "${THE_PRODUCT.getPicurl()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>name:</label></td>
+						<td><input type="text" name="name" 
+							value = "${THE_PRODUCT.getName()}"/></td>
+					</tr>
+					
+					
+					<tr>
+						<td><label>pict:</label></td>
+						<td><input type="text" name="pict" 
+							value = "${THE_PRODUCT.getPict()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>price:</label></td>
+						<td><input type="text" name="price" 
+							value = "${THE_PRODUCT.getPrice()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>delieverFee:</label></td>
+						<td><input type="text" name="delieverFee" 
+							value = "${THE_PRODUCT.getDelieverFee()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>descript:</label></td>
+						<td><input type="text" name="descript" 
+							value = "${THE_PRODUCT.getDescript()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>seller:</label></td>
+						<td><input type="text" name="seller" 
+							value = "${THE_PRODUCT.getSeller()}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label>categ:</label></td>
+						<td><input type="text" name="categ" 
+							value = "${THE_PRODUCT.getCateg()}"/></td>
+					</tr>
+					
+
+					
+					<tr>
+						<td><label></label></td>
+						<td><input type="submit" value="Save" class="save"/></td>
+					</tr>
+					
+					
+								
+				</tbody>	
+			</table>
+
+		</form>
+		
+		<div type="clear:" both;"></div>
+		
+		<p>
+			<a href="productControllerServlet">Back to List</a>
+		
+		</p>
+	</div>
+
+
+</body>
+</html>
