@@ -70,7 +70,7 @@ CREATE TABLE pal(
 CREATE TABLE cart(
 	id TEXT PRIMARY KEY,
 	buyer Integer NOT NULL references users(id),
-	purchaseDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')，
+	purchaseDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC'),
 	method Text NOT NULL references paymethod(methods),
 	address INTEGER NOT NULL references address(id)
 );

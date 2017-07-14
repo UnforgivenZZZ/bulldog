@@ -14,7 +14,7 @@
 
   
   <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0720/4459/files/favicon_32x32.png?v=1480350603" type="image/png" />
-  
+  <!-- Latest compiled and minified CSS -->
 
   <!-- Title and description ================================================== -->
   <title>
@@ -73,7 +73,7 @@
   
   <link href="//fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" type="text/css" media="all" />
 
-
+   <link rel="stylesheet" type="text/css" href="main.css">
   
 
 
@@ -510,14 +510,17 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
     
 
     <div class="medium-down--hide">
-      <ul class="site-nav">
-        <li>
-          <a href="/cart" class="cart-toggle site-nav__link">
-            <span class="icon icon-cart" aria-hidden="true"></span>
-            bull-Cart
-            <span id="cartCount" class="hidden-count">(0)</span>
-          </a>
-        </li>
+     <ul class="site-nav">
+<form action="/search" method="get" class="input-group search-bar" role="search">
+  
+  <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field" aria-label="Search our store">
+  <span class="input-group-btn">
+    <button type="submit" class="btn icon-fallback-text">
+      <span class="icon icon-search" aria-hidden="true"></span>
+      <span class="fallback-text">Search</span>
+    </button>
+  </span>
+</form>
         
       </ul>
 
@@ -526,60 +529,56 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
 
     
 
-    <nav class="medium-down--hide" role="navigation">
+<nav class="medium-down--hide" role="navigation">
       
 
 
 
 <ul class="site-nav" id="accessibleNav">
-  
-  
-    
+<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <form id="signin" class="navbar-form navbar-left" role="form" action="login" method="post">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="email" class="form-control" name="e_name" value="" placeholder="Email Address">                                        
+                        </div>
+						<br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="pin" value="" placeholder="Password">                                        
+                        </div>
+						<br>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                         </form>
+                        </ul>
+                    </li>
 
-    
-    
-      
-        <li class="site-nav--active">
-          <a href="/" class="site-nav__link site-nav__linknodrop">Home</a>
-        </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/collections/catalog" class="site-nav__link site-nav__linknodrop">Catalog</a>
-        </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/blogs/news" class="site-nav__link site-nav__linknodrop">Blog</a>
-        </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/pages/about-us" class="site-nav__link site-nav__linknodrop">About Us</a>
-        </li>
-      
-    
-  
   
 </ul>
+<ul class="site-nav" id="accessibleNav">
+ <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <form id="signin" class="navbar-form navbar-left" role="form" action="login" method="post">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="email" class="form-control" name="e_name" value="" placeholder="Email Address">                                        
+                        </div>
+						<br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="pin" value="" placeholder="Password">                                        
+                        </div>
+						<br>
+                        <button type="submit" class="btn btn-primary">sign up</button>
+                         </form>
+                        </ul>
+                    </li>
+</ul>
+     
+
+
 
     </nav>
 
@@ -590,54 +589,46 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
 </div>
 
   <div class="page-wrapper page-element">
-	
-	
-	
-<!-- top navgation bar -->	
-<style>
+    
+    
+    
+<!-- top navgation bar -->  
 
+<style>
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #fff;
 }
-
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
-.topnav a.active {
-    background-color: #4CAF50;
+.topnav .active {
+    background-color: orange;
     color: white;
 }
 </style>
-</head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <body>
 
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
-
-<div style="padding-left:16px">
-  <h2>Top Navigation Example</h2>
-  <p>Some content..</p>
-</div>
-<!-- .................................................... -->	
-	
-	
+<!-- .................................................... -->   
+    
+    
     <main class="main-content" role="main">
       <div class="wrapper">
 
@@ -1332,120 +1323,22 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
       
   <script id="cartTemplate" type="text/template">
 
-  <h1 class="text-center">Your Cart</h1>
-
-  
-    <form action="/cart" method="post" novalidate>
-      <div class="ajaxifyCart--products">
-        {{#items}}
-        <div class="cart__row" data-line="{{line}}">
-          <div class="grid">
-            <div class="grid-item medium--two-fifths large--one-fifth text-center">
-              <a href="{{url}}" class="ajaxCart--product-image"><img src="{{img}}" alt=""></a>
-
-              <p class="cart__remove"><a href="/cart/change?line={{line}}&amp;quantity=0" class="ajaxifyCart--remove" data-line="{{line}}"><span class="icon icon-cross2" aria-hidden="true"></span> Remove</a></p>
-            </div>
-            <div class="grid-item medium--three-fifths large--four-fifths">
-              <p class="cart__product"><a href="{{ url }}">
-                {{name}}
-              </a>
-              <br><small>{{ variation }}</small></p>
-
-              <div class="grid">
-
-                <div class="grid-item one-half">
-                  <span class="cart__mini-labels">QTY</span>
-                  <div class="ajaxifyCart--qty">
-                    <input type="text" name="updates[]" class="ajaxifyCart--num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}"  aria-label="quantity" pattern="[0-9]*">
-                    <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}"><span class="add">+</span></span>
-                    <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemMinus}}"><span class="minus">-</span></span>
-                  </div>
-                </div>
-
-                <div class="grid-item one-half text-right">
-                  <span class="cart__mini-labels">Total</span>
-                  <p>{{ price }}</p>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        {{/items}}
-      </div>
-
-      <div class="cart__row text-center large--text-right">
-        
-        <h6>Subtotal
-        
-        <span class="cart__subtotal">{{ totalPrice }}</span></h6>
-      </div>
-
-      <div class="cart__row">
-        <div class="grid">
-
-          
-          
-            <div class="grid-item large--one-half text-center large--text-left">
-              <label for="cartSpecialInstructions">Special instructions for seller</label>
-              <textarea name="note" class="input-full cart__instructions" id="cartSpecialInstructions"></textarea>
-            </div>
-          
-          
-
-          <div class="grid-item text-center large--text-right large--one-half">
-
-            <input type="submit" class="{{btnClass}}" name="checkout" value="Checkout">
-
-          </div>
-
-        </div>
-      </div>
-    </form>
   
   </script>
   <script id="drawerTemplate" type="text/template">
-  
-    <div id="ajaxifyDrawer" class="ajaxify-drawer">
-      <div id="ajaxifyCart" class="ajaxifyCart--content {{wrapperClass}}"></div>
-    </div>
+
   
   </script>
   <script id="modalTemplate" type="text/template">
-  
-    <div id="ajaxifyModal" class="ajaxify-modal">
-      <div id="ajaxifyCart" class="ajaxifyCart--content"></div>
-    </div>
+
   
   </script>
   <script id="ajaxifyQty" type="text/template">
-  
-    <div class="ajaxifyCart--qty">
-      <input type="text" class="ajaxifyCart--num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
-        <span class="add" aria-hidden="true">+</span>
-        <span class="visuallyhidden">Increase item quantity by one</span>
-      </span>
-      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemMinus}}">
-        <span class="minus" aria-hidden="true">-</span>
-        <span class="visuallyhidden">Reduce item quantity by one</span>
-      </span>
-    </div>
+
   
   </script>
   <script id="jsQty" type="text/template">
-  
-    <div class="js-qty">
-      <input type="text" class="js--num" value="{{itemQty}}" min="1" data-id="{{key}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
-      <span class="js--qty-adjuster js--add" data-id="{{key}}" data-qty="{{itemAdd}}">
-        <span class="add" aria-hidden="true">+</span>
-        <span class="visuallyhidden">Increase item quantity by one</span>
-      </span>
-      <span class="js--qty-adjuster js--minus" data-id="{{key}}" data-qty="{{itemMinus}}">
-        <span class="minus" aria-hidden="true">-</span>
-        <span class="visuallyhidden">Reduce item quantity by one</span>
-      </span>
-    </div>
+
   
   </script>
 <!--  cart detail-->
