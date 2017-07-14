@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
+=======
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+	</list>
+>>>>>>> b32f3d51ad1317fa50048cf2c6ab2eab5dbf1e95
 </section>

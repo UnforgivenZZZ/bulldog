@@ -24,6 +24,13 @@
 					class="add-product-button"
 		
 			/>
+			
+			<!-- put new button: searching tempProduct -->
+			<input type="hidden" name="command" value="SEARCH" />
+            
+                Search student: <input type="text" name="theSearchName" />
+                
+             <input type="submit" value="Search" class="add-student-button" />
 		
 		
 			<!-- id,sku,pic,name,pict,price,delieverFee,descript,seller,categ,postDate  -->

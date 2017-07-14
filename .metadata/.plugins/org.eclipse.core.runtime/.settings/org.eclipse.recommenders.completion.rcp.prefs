@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 completion_tips_seen=org.eclipse.recommenders.completion.rcp.tips.types
+=======
+completion_tips_seen=org.eclipse.recommenders.completion.rcp.tips.discovery\:org.eclipse.recommenders.completion.rcp.tips.types
+>>>>>>> b32f3d51ad1317fa50048cf2c6ab2eab5dbf1e95
 eclipse.preferences.version=1
