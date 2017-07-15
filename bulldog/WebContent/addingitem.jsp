@@ -4,13 +4,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Adding new item</title>
-<link type="text/css" rel="stylesheet" href="css/add-products-style.css">
-<link type="text/css" rel="stylesheet" href="css/style.css">
+
 </head>
+<style>
+<!-- This must be include to used css>
+<%@ include file="/css/add-products-style.css"%>
+<%@ include file="/css/style.css"%>
+
+</style>
 <body>
 
 <!-- 	id,sku,pic,name,pict,price,delieverFee,descript,seller,categ,postDate <form action="adding" method="post">-->
-    <form action="adding" method="post">
+   <form action="productControllerServlet" method="GET">
+			<input type ="hidden" name ="command" value ="ADD"/>
         <table border="0" width="45%" align="center">
      
 	

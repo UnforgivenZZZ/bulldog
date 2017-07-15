@@ -41,3 +41,10 @@ updating
 function has been created in productController.java
 You can modifiy it as a management system
 Updating your library to use c 
+
+---------------------------------------------------------------------------------------------------------------------------
+07/14/2017 17:17
+Adding the complete management for products: searching, deleteing, adding, and updateing
+Fixing the bug: such as css
+Updating all the jsp file
+Deleting all the unnessary files

@@ -1,20 +1,16 @@
 package com.server;
 import com.connection.*;
-import com.connection.EmailUtility;
-
 import java.io.IOException;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.sql.*;
-
-import net.codejava.email.*;
-
 /**
  * Servlet implementation class register
  */
@@ -29,6 +25,15 @@ public class register extends HttpServlet {
     private String port;
     private String user;
     private String pass;
+ 
+    public void init() {
+        // reads SMTP server setting from web.xml file
+        ServletContext context = getServletContext();
+        host = context.getInitParameter("host");
+        port = context.getInitParameter("port");
+        user = context.getInitParameter("user");
+        pass = context.getInitParameter("pass");
+    }
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,22 +44,13 @@ public class register extends HttpServlet {
 		con = ConnectionManager.getConnection();
 
     }
- 
-    public void init() {
-        // reads SMTP server setting from web.xml file
-        ServletContext context = getServletContext();
-        host = context.getInitParameter("host");
-        port = context.getInitParameter("port");
-        user = context.getInitParameter("user");
-        pass = context.getInitParameter("pass");
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/signup.html").forward(request, response);
+		request.getRequestDispatcher("/regist.jsp").forward(request, response);
 	}
 
 	/**
@@ -66,8 +62,22 @@ public class register extends HttpServlet {
 		String contact = request.getParameter("contact");
 		String pin = request.getParameter("pin");
 		String uname = request.getParameter("username");
+		String err = "";
 		
 		try{
+			if(registerCon.check(con, contact, uname)) {
+			
+	        String recipient = request.getParameter("contact");
+	        String subject = request.getParameter("username");
+	        String content = request.getParameter("pin");
+	     
+	        String thank = "";
+	        if(content != null)
+	        	thank = "3Q you for register";
+	        
+	        EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
+                    thank);
+	        
 			con.setAutoCommit(false);
 			ps = con.prepareStatement(qry);
 			ps.setString(1, uname);
@@ -76,22 +86,22 @@ public class register extends HttpServlet {
 			ps.executeUpdate();
 			con.commit();
 			
-			// send email
-	        String recipient = request.getParameter("contact");
-	        String subject = request.getParameter("username");
-	        String content = request.getParameter("pin");
-	        
-	        String thank = null;
-	        if(content != null)
-	        	thank = "3Q you for register";
-	        String resultMessage = "";
-	        
-	        EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
-                    thank);
-            resultMessage = "The e-mail was sent successfully";
+			}else{
+				err = "email or user name already taken";
+			}
 			
-		}catch(Exception ex){
+		}catch(SQLException ex){
 			System.out.println(ex.getMessage());
+
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			err = "invalid email address";
+			e.printStackTrace();
+			
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			err = "message not send, plz check if ur email is correct";
+			e.printStackTrace();
 		}finally{
 			try{
 				con.setAutoCommit(true);
@@ -100,6 +110,8 @@ public class register extends HttpServlet {
 				System.out.println(ex.getMessage());
 
 			}
+			request.getSession().setAttribute("err", err);
+			response.sendRedirect("http://localhost:8080/bulldog/register");
 		}
 	}
 

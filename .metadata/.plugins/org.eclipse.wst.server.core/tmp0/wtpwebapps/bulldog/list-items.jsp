@@ -3,9 +3,12 @@
 <html>
 <head>
 	<title>Products Tracker App</title>
-	<link type="text/css" rel="stylesheet" href="css/itemviewstyle.css">
 </head>
 
+<style>
+<!-- This must be include to used css>
+<%@ include file="/css/item_style.css"%>
+</style>
 <body>
 
 	<div id ="wrapper">
@@ -18,19 +21,27 @@
 		
 		<div id ="content">
 			
-			<!-- put new button: Adding tempProduct -->
-			<input type="button" value="Add new Item"
-					onclick="window.location.href='addingitem.jsp';return false;"
-					class="add-product-button"
+
 		
-			/>
+			            <!--  add a search box -->
+			<form action="productControllerServlet" method="GET">
+		
+				<input type="hidden" name="command" value="SEARCH" />
 			
-			<!-- put new button: searching tempProduct -->
-			<input type="hidden" name="command" value="SEARCH" />
-            
-                Search student: <input type="text" name="theSearchName" />
+                Search product: <input type="text" name="theSearchName" />
                 
-             <input type="submit" value="Search" class="add-student-button" />
+                <input type="submit" value="Search" class="add-student-button" />
+                
+                
+                
+	                			<!-- put new button: Adding tempProduct -->
+				<input type="button" value="Add new Item"
+						onclick="window.location.href='addingitem.jsp';return false;"
+						class="add-product-button"
+			
+				/>
+            
+            </form>
 		
 		
 			<!-- id,sku,pic,name,pict,price,delieverFee,descript,seller,categ,postDate  -->

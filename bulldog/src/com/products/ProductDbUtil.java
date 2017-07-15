@@ -1,5 +1,6 @@
 package com.products;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.sql.DataSource;
 
 public class ProductDbUtil {
@@ -96,7 +98,7 @@ public class ProductDbUtil {
 			
 	}
 
-	public void addProduct(product theProduct) throws SQLException {
+	public void addProduct(product theProduct)throws ServletException, IOException  {
 		
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
@@ -110,6 +112,7 @@ public class ProductDbUtil {
 			//create sql for insert
 			String sql = "INSERT INTO products(id,sku,pic,name,pict,price,delieverFee,descript,seller,categ) "+
 					" VALUES(?,?,?,?,?,?,?,?,?,?) ";
+			
 			
 			//set the param values for product
 			myStmt = myConn.prepareStatement(sql);
@@ -125,13 +128,15 @@ public class ProductDbUtil {
 			myStmt.setString(8, theProduct.getDescript());
 			myStmt.setInt(9, theProduct.getSeller());
 			myStmt.setInt(10, theProduct.getCateg());
-			myStmt.executeUpdate();
+	
 			
 			//execute sql insert
 			myStmt.execute();
 			
 		}
-		
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
 		finally{
 			close(myConn, myStmt, null);
 		}
@@ -276,6 +281,73 @@ public class ProductDbUtil {
 			close(myConn, myStmt, null);
 		}
 		
+	}
+
+	public List<product> searchProducts(String theSearchName) throws SQLException {
+        List<product> products = new ArrayList<>();
+        
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+      
+        
+        try {
+            
+            // get connection to database
+            myConn = dataSource.getConnection();
+            
+            //
+            // only search by name if theSearchName is not empty
+            //
+            if (theSearchName != null && theSearchName.trim().length() > 0) {
+                // create sql to search for students by name
+                String sql = "select * from products where lower(name) like ?";
+                // create prepared statement
+                myStmt = myConn.prepareStatement(sql);
+                // set params
+                String theSearchNameLike = theSearchName.toLowerCase();
+                myStmt.setString(1, theSearchNameLike);
+            }  
+            
+            else {
+				// create sql to get all students
+				String sql = "select * from products order by name";
+
+				// create prepared statement
+				myStmt = myConn.prepareStatement(sql);
+			}
+            
+            // execute statement
+            myRs = myStmt.executeQuery();
+            
+            // retrieve data from result set row
+            while (myRs.next()) {
+                
+				//read products info from the data
+				int id = myRs.getInt("id");
+				String sku = myRs.getString("sku");	
+				String picurl = myRs.getString("pic");
+				String name = myRs.getString("name");		
+				String pict = myRs.getString("pict");	
+				double price = myRs.getDouble("price");	
+				double DelieverFee = myRs.getDouble("delieverFee");	
+				String Descript = myRs.getString("descript");			
+				int Seller = myRs.getInt("seller");	
+				int Categ = myRs.getInt("categ");
+				
+				//create a new product object
+				product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ);
+                
+                // add it to the list of students
+				products.add(theProduct);           
+            }
+            
+            return products;
+        }
+        finally {
+            // clean up JDBC objects
+            close(myConn, myStmt, myRs);
+        }
 	}
 	
 	

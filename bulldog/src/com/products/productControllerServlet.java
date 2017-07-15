@@ -1,6 +1,7 @@
 package com.products;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -81,6 +82,11 @@ public class productControllerServlet extends HttpServlet {
 			case "DELETE":
 				deleteProduct(request, response);
 				break;
+				
+				
+			case "SEARCH":
+                searchStudents(request, response);
+                break;
 
 				
 			default:
@@ -102,6 +108,25 @@ public class productControllerServlet extends HttpServlet {
 
 
 	
+	private void searchStudents(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException, SQLException {
+		 // read search name from form data
+        String theSearchName = request.getParameter("theSearchName");
+        
+        // search students from db util
+        List<product> products = productDbUtil.searchProducts(theSearchName);
+        
+		//add product to the request
+		request.setAttribute("PRODUCT_LIST", products);
+		
+		//send to the JSP page (view)
+		request.getRequestDispatcher("/list-items.jsp").forward(request, response);
+
+		
+	}
+
+
+
 	private void deleteProduct(HttpServletRequest request, HttpServletResponse response)throws Exception {
 		
 		//read id from the databse
@@ -164,7 +189,7 @@ public class productControllerServlet extends HttpServlet {
 
 	private void addProducts(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		//read products info from the data
+		//id,sku,pic,name,pict,price,delieverFee,descript,seller,categ,postDate
 		int id = Integer.parseInt(request.getParameter("_id"));
 		String sku = request.getParameter("_Sku").toString();	
 		String picurl = request.getParameter("_Pictureurl").toString();
@@ -174,7 +199,7 @@ public class productControllerServlet extends HttpServlet {
 		double DelieverFee = Double.parseDouble(request.getParameter("_DelieverFee"));	
 		String Descript = request.getParameter("_Descript").toString();			
 		int Seller =Integer.parseInt( request.getParameter("_Seller").toString());	
-		int Categ = Integer.parseInt(request.getParameter("_Categ").toString());
+		int Categ = Integer.parseInt(request.getParameter("_Categ").toString());	
 				
 		//create a new product object
 		product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ);
