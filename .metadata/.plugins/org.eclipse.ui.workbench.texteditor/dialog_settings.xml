@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="site-header" key="selection"/>
+		<item value="hr--small" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="hr--small"/>
 			<item value="site-header"/>
 			<item value="slideshow"/>
 			<item value="slide"/>
@@ -15,7 +16,6 @@
 			<item value="body"/>
 			<item value="bull-cart"/>
 			<item value="is"/>
-			<item value="is-visiable"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -375,61 +375,58 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
 
 
 
-<ul class="site-nav" id="accessibleNav">
-  
-  
-    
-
-    
-    
-      
-        <li class="site-nav--active">
-          <a href="/" class="site-nav__link site-nav__linknodrop">Home</a>
+<ul class="site-nav" id="accessibleNav">     
+        <li class="dropdown" style="padding:10px;">
+        <a href="#" style="font-size:18px;" class="dropdown-toggle text-info" data-toggle="dropdown">Sign In<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <form id="signin" class="navbar-form navbar-left" role="form" action="login" method="post">
+                        <div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      						<input id="email" type="text" class="form-control" name="email" placeholder="Email or user name">
+    					</div>
+   			 			<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      						<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+    					</div>
+    					<br>      <hr class="hr">
+                        <input type="submit" class="btn btn-primary" value="log in"/>
+                         </form>
+                        </ul>
         </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/collections/catalog" class="site-nav__link site-nav__linknodrop">Catalog</a>
-        </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/blogs/news" class="site-nav__link site-nav__linknodrop">Blog</a>
-        </li>
-      
-    
-  
-    
-
-    
-    
-      
-        <li >
-          <a href="/pages/about-us" class="site-nav__link site-nav__linknodrop">About Us</a>
-        </li>
-      
-    
-  
-  
 </ul>
+
+<ul class="site-nav" id="accessibleNav">     
+        <li class="dropdown" style="padding:10px;">
+            <a href="#" style="font-size:18px;" class="dropdown-toggle text-info" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <form id="signin" class="navbar-form navbar-left" role="form" action="register" method="post">
+						<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      						<input id="email" type="text" class="form-control" name="contact" placeholder="Email">
+    					</div>
+    					<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      						<input id="user" type="text" class="form-control" name="username" placeholder="user name">
+    					</div>
+   			 			<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      						<input id="password" type="password" class="form-control" name="pin" placeholder="Password">
+    					</div>
+    					
+						<br>      <hr class="hr">
+                        <input type="submit" class="btn btn-primary" value="sign up"/>
+                         </form>
+                        </ul>
+          </li>
+</ul>
+
 
     </div>
   </nav>
 </div>
 
 <header class="site-header page-element" role="banner" data-section-id="header" data-section-type="header">
+
   <div class="nav-bar grid--full large--hide">
 
     <div class="grid-item one-quarter">
@@ -468,8 +465,9 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
       </div>
 
     </div>
+    
 <!--  nknow cart area -->
-    <div class="grid-item one-quarter">
+     <div class="grid-item one-quarter"> 
       <a href="/cart" class="cart-toggle">
       <div class="table-contain">
         <div class="table-contain__inner">
@@ -479,10 +477,11 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
           </span>
         </div>
       </div>
-      </a>
+      </a>  
     </div>
     <!--  nknow cart area -->
     
+<br>
 
   </div>
 
@@ -530,48 +529,53 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
     
 
 <nav class="medium-down--hide" role="navigation">
-      
 
 
 
 <ul class="site-nav" id="accessibleNav">
 <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In<b class="caret"></b></a>
+            <a href="#" style="font-size:16px;" class="dropdown-toggle text-info" data-toggle="dropdown">Sign In<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         <form id="signin" class="navbar-form navbar-left" role="form" action="login" method="post">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="email" class="form-control" name="e_name" value="" placeholder="Email Address">                                        
-                        </div>
-						<br>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="form-control" name="pin" value="" placeholder="Password">                                        
-                        </div>
-						<br>
-                        <button type="submit" class="btn btn-primary">Login</button>
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      						<input id="email" type="text" class="form-control" name="email" placeholder="Email or user name">
+    					</div>
+   			 			<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      						<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+    					</div>
+    					<br>      <hr class="hr">
+                        <input type="submit" class="btn btn-primary" value="log in"/>
                          </form>
                         </ul>
                     </li>
 
   
 </ul>
+
+      <hr class="hr--small">
+
 <ul class="site-nav" id="accessibleNav">
  <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
+            <a href="#" style="font-size:16px;" class="dropdown-toggle text-info" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                        <form id="signin" class="navbar-form navbar-left" role="form" action="login" method="post">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="email" class="form-control" name="e_name" value="" placeholder="Email Address">                                        
-                        </div>
-						<br>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="form-control" name="pin" value="" placeholder="Password">                                        
-                        </div>
-						<br>
-                        <button type="submit" class="btn btn-primary">sign up</button>
+                        <form id="signin" class="navbar-form navbar-left" role="form" action="register" method="post">
+						<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      						<input id="email" type="text" class="form-control" name="contact" placeholder="Email">
+    					</div>
+    					<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      						<input id="user" type="text" class="form-control" name="username" placeholder="user name">
+    					</div>
+   			 			<div class="input-group">
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      						<input id="password" type="password" class="form-control" name="pin" placeholder="Password">
+    					</div>
+    					
+						<br>      <hr class="hr">
+                        <input type="submit" class="btn btn-primary" value="sign up" />
                          </form>
                         </ul>
                     </li>
@@ -628,7 +632,18 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
 
 <!-- .................................................... -->   
     
-    
+<div class="nav-bar grid--full large--hide">
+<form action="/search" method="get" class="input-group search-bar" role="search">
+  
+  <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field" aria-label="Search our store">
+  <span class="input-group-btn">
+    <button type="submit" class="btn icon-fallback-text">
+      <span class="icon icon-search" aria-hidden="true"></span>
+      <span class="fallback-text">Search</span>
+    </button>
+  </span>
+</form>
+</div>
     <main class="main-content" role="main">
       <div class="wrapper">
 
