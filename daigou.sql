@@ -1,3 +1,12 @@
+create table admins(
+    id serial primary key,
+    contact Text Not Null unique,
+    admin_name text not null unique,
+    password integer not null
+);
+
+
+
 -- *******************************************
 CREATE TABLE users(
 	id serial PRIMARY KEY,
@@ -8,7 +17,7 @@ CREATE TABLE users(
 	profpict TEXT,
 
 	isSeller BOOLEAN NOT NULL default(FALSE),
-	registerDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC'),
+	registerDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')
 
 );
 
@@ -21,14 +30,14 @@ CREATE TABLE address(
 	state TEXT NOT NULL,
 	country TEXT NOT NULL,
 
-	user INTEGER references users(id)
+	users INTEGER references users(id)
 );
 
 CREATE TABLE categories(
 	id serial PRIMARY KEY,
 	name varchar(15) NOT NULL UNIQUE,
 	createDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')
-)
+);
 
 CREATE TABLE products(
 	id serial PRIMARY KEY,
@@ -41,7 +50,7 @@ CREATE TABLE products(
 	delieverFee REAL NOT NULL,
 	descript TEXT NOT NULL,
 
-	seller Integer Not NULL references users(id),
+	seller Integer Not NULL references admins(id),
 	categ integer not null references categories(id),
 	postDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')
 );
@@ -76,13 +85,12 @@ CREATE TABLE cart(
 );
 
 CREATE TABLE orders(
-	id TEXT references cart(id),
-
+	id SERIAL PRIMARY KEY,
+	cart TEXT references cart(id),
 	item Integer references products(id),
 	num Integer NOT NULL,
 	price REAL,
 	addDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC'),
-
 	buyer Integer NOT NULL references users(id),
 	confid TEXT NOT NULL references cart(id)
 
@@ -96,6 +104,7 @@ CREATE TABLE paypalrecip(
 	cart TEXT NOT NULL references cart(id),
 	account INTEGER NOT NULL references pal(id)
 );
+
 
 
 
