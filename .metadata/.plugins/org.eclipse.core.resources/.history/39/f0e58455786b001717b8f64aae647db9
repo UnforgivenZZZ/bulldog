@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Upload page</title>
+</head>
+<body>
+<form name="myform" id="myform" action="upload" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>Slide Name :</td>
+                <td><input type="file" name="filename"></td>
+            </tr>
+            <tr>
+                <td>Video File :</td>
+                <td><input type="file" name="filecontent"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Submit" onclick="fileUpload()"></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+	
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+function fileUpload()
+{
+var formData = $('#myform').serialize();
+     $.ajax({
+            type: "POST",
+            url: "upload",
+            async: true,
+            data: formData,
+            contentType: "multipart/form-data",
+            processData: false,
+            success: function(msg) {
+             alert("File has been uploaded successfully");
+            },
+            error:function(msg) {
+                alert("Failed to upload file");
+            }
+        });
+}
+</script>
+</body>
+
+</html>

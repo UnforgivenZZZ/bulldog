@@ -35,39 +35,18 @@
   
 <!-- Product  -->
 
-
-
-  <meta property="og:url" content="https://poptheme-bone-promo.myshopify.com/">
-
-
-
-
-
-
-  <meta name="twitter:card" content="summary">
-
-
-  <meta name="twitter:site" content="@shopify">
-
-
-  <meta name="twitter:title" content="Bliss - Pop Theme by Shopify">
-  
-    <meta name="twitter:description" content="">
-  
-
-
-
+ 
   <!-- Helpers ================================================== -->
-  <link rel="canonical" href="https://poptheme-bone-promo.myshopify.com/">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--   <link rel="canonical" href="https://poptheme-bone-promo.myshopify.com/">
+ -->  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   
     <!-- Ajaxify Cart Plugin ================================================== -->
-    <link href="//cdn.shopify.com/s/files/1/0720/4459/t/4/assets/ajaxify.scss.css?16771221820700569719" rel="stylesheet" type="text/css" media="all" />
+    <link href="/bulldog/css/ajaxify.scss.css" rel="stylesheet" type="text/css" media="all" />
   
 
   <!-- CSS ================================================== -->
-  <link href="//cdn.shopify.com/s/files/1/0720/4459/t/4/assets/timber.scss.css?16771221820700569719" rel="stylesheet" type="text/css" media="all" />
+  <link href="/bulldog/css/timber.css" rel="stylesheet" type="text/css" media="all" />
   
   
   
@@ -90,161 +69,7 @@
 
   <!-- Header hook for plugins ================================================== -->
   
-<script type="text/javascript">
-//<![CDATA[
-      var Shopify = Shopify || {};
-      Shopify.shop = "poptheme-bone-promo.myshopify.com";
-      Shopify.theme = {"name":"pop - sectioned","id":161433616,"theme_store_id":null,"role":"main"};
-      Shopify.theme.handle = "null";
-      Shopify.theme.style = {"id":null,"handle":null};
-//]]>
-</script><script id="__st">
-//<![CDATA[
-var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33eefa","pageurl":"poptheme-bone-promo.myshopify.com\/","u":"f191fe35c2ca","p":"home"};
-//]]>
-</script><script src="https://cdn.shopify.com/s/javascripts/shopify_stats.js?v=6" type="text/javascript" async="async"></script>
-<meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/7204459/digital_wallets/dialog" />
-<script type="text/javascript">
-//<![CDATA[
-        window['GoogleAnalyticsObject'] = 'ga';
-        window['ga'] = window['ga'] || function() {
-          (window['ga'].q = window['ga'].q || []).push(arguments);
-        };
-        window['ga'].l = 1 * new Date();
-//]]>
-</script><script src="https://www.google-analytics.com/analytics.js" type="text/javascript" async="async"></script><script type="text/javascript">var _gaUTrackerOptions = {'allowLinker': true};ga('create', 'UA-42189134-16', 'auto', _gaUTrackerOptions);ga('send', 'pageview');
-      (function(){
-        ga('require', 'linker');
-        function addListener(element, type, callback) {
-          if (element.addEventListener) {
-            element.addEventListener(type, callback);
-          }
-          else if (element.attachEvent) {
-            element.attachEvent('on' + type, callback);
-          }
-        }
-        function decorate(event) {
-          event = event || window.event;
-          var target = event.target || event.srcElement;
-          if (target && (target.action || target.href)) {
-            ga(function (tracker) {
-              var linkerParam = tracker.get('linkerParam');
-              document.cookie = '_shopify_ga=' + linkerParam + '; ' + 'path=/';
-            });
-          }
-        }
-        addListener(window, 'load', function(){
-          for (var i=0; i<document.forms.length; i++) {
-            if(document.forms[i].action && document.forms[i].action.indexOf('/cart') >= 0) {
-              addListener(document.forms[i], 'submit', decorate);
-            }
-          }
-          for (var i=0; i<document.links.length; i++) {
-            if(document.links[i].href && document.links[i].href.indexOf('/checkout') >= 0) {
-              addListener(document.links[i], 'click', decorate);
-            }
-          }
-        })
-      }());
-    </script><script src="//cdn.shopify.com/s/assets/themes_support/ga_urchin_forms-668547562549a84f5dfa01ef82607987f85ecbe1c8301faf25059becfa208199.js" defer="defer"></script>
-      <script type="text/javascript">
-        
-      window.ShopifyAnalytics = window.ShopifyAnalytics || {};
-      window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
-      window.ShopifyAnalytics.meta.currency = 'CAD';
-      var meta = {"page":{"pageType":"home"}};
-      for (var attr in meta) {
-        window.ShopifyAnalytics.meta[attr] = meta[attr];
-      }
-    
-      </script>
 
-      <script type="text/javascript">
-        window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
-          
-        };
-      </script>
-
-      <script type="text/javascript" class="analytics">
-        
-        
-        (function () {
-          var customDocumentWrite = function(content) {
-            var jquery = null;
-            if (window.jQuery) {
-              jquery = window.jQuery;
-            } else if (window.Checkout && window.Checkout.$) {
-              jquery = window.Checkout.$;
-            }
-            if (jquery) {
-              jquery('body').append(content);
-            }
-          };
-          var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
-          if (trekkie.integrations) {
-            return;
-          }
-          trekkie.methods = [
-            'identify',
-            'page',
-            'ready',
-            'track',
-            'trackForm',
-            'trackLink'
-          ];
-          trekkie.factory = function(method) {
-            return function() {
-              var args = Array.prototype.slice.call(arguments);
-              args.unshift(method);
-              trekkie.push(args);
-              return trekkie;
-            };
-          };
-          for (var i = 0; i < trekkie.methods.length; i++) {
-            var key = trekkie.methods[i];
-            trekkie[key] = trekkie.factory(key);
-          }
-          trekkie.load = function(config) {
-            trekkie.config = config;
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.onerror = function(e) {
-              (new Image()).src = '//v.shopify.com/internal_errors/track?error=trekkie_load';
-            };
-            script.async = true;
-            script.src = 'https://cdn.shopify.com/s/javascripts/tricorder/trekkie.storefront.min.js?v=2017.03.29.1';
-            var first = document.getElementsByTagName('script')[0];
-            first.parentNode.insertBefore(script, first);
-          };
-          trekkie.load(
-            {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":7204459,"isMerchantRequest":null,"themeId":161433616,"themeCityHash":11758400213281107348}},"Performance":{"navigationTimingApiMeasurementsEnabled":true,"navigationTimingApiMeasurementsSampleRate":0.1},"Session Attribution":{}}
-          );
-          var loaded = false;
-          trekkie.ready(function() {
-            if (loaded) return;
-            loaded = true;
-            window.ShopifyAnalytics.lib = window.trekkie;
-            
-            var originalDocumentWrite = document.write;
-            document.write = customDocumentWrite;
-            try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
-            document.write = originalDocumentWrite;
-            
-        window.ShopifyAnalytics.lib.page(
-          null,
-          {"pageType":"home"}
-        );
-      
-            
-          });
-          
-      var eventsListenerScript = document.createElement('script');
-      eventsListenerScript.async = true;
-      eventsListenerScript.src = "//cdn.shopify.com/s/assets/shop_events_listener-9410288c486c406bc38edb97003bb123d375112c2b7e037d65afabae7c905e02.js";
-      document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
-    
-        })();
-      </script>
     
 
 
@@ -772,27 +597,11 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
       
       <div class="grid-item medium--one-third large--one-third" >
         <!-- snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="">
   <div class="product-wrapper">
     <a href="/products/perfumeoil-hunter" class="product">
       
-        <img src="//cdn.shopify.com/s/files/1/0720/4459/products/parc-4_22f85aa2-921f-4113-a770-779c52c0e450_large.jpeg?v=1418331576" alt="Perfume Oil- Hunter" class="product__img">
+        <img src="http://3i1e5d437yd84efcy34dardm.wpengine.netdna-cdn.com/wp-content/uploads/2017/01/chanel-chance-new-perfume-for-women-2017-2018-e1492949955651.jpg" alt="Perfume Oil- Hunter" class="product__img">
       
       <div class="product__cover"></div>
       
@@ -843,7 +652,7 @@ var __st={"a":7204459,"offset":-14400,"reqid":"5f782a18-92bf-47d8-84d4-78bf5d33e
   <div class="product-wrapper">
     <a href="/products/pinkclayfacialmask" class="product">
       
-        <img src="//cdn.shopify.com/s/files/1/0720/4459/products/parc-31_302ebd91-6e8c-41d0-a234-f5f1c1964df3_large.jpeg?v=1418331553" alt="Pink Clay Facial Mask" class="product__img">
+        <img src="http://betheme.muffingroupsc.netdna-cdn.com/be/perfume/wp-content/uploads/2016/04/home_perfume_pic2.jpg" alt="Pink Clay Facial Mask" class="product__img">
       
       <div class="product__cover"></div>
       
