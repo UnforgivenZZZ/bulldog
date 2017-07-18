@@ -53,3 +53,7 @@ Adding the complete management for products: searching, deleteing, adding, and u
 Fixing the bug: such as css
 Updating all the jsp file
 Deleting all the unnessary files
+
+---------------------------------------------------------------------------------------------------------------------------
+07/18/2017 17:17
+Adding the data into the product, and updating all the relative function
