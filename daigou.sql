@@ -38,16 +38,12 @@ CREATE TABLE categories(
 	name varchar(15) NOT NULL UNIQUE,
 	createDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')
 );
-create table images(
-	id serial primary key,
-	pic text NOT NULL UNIQUE
-);
+
 
 CREATE TABLE products(
 	id serial PRIMARY KEY,
 
 	sku TEXT NOT NULL UNIQUE,
-	pic TEXT NOT NULL UNIQUE,
 	name TEXT NOT NULL,
 	price REAL NOT NULL,
 	delieverFee REAL NOT NULL,
@@ -56,12 +52,12 @@ CREATE TABLE products(
 	seller Integer Not NULL references admins(id),
 	postDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')
 );
-create table prod_mgs(
-	pid integer Not NULL references products(id),
-	iid integer NOT NULL references images(id),
-	Primary KEY (pid,iid)
-
+create table images(
+	id serial primary key,
+	pic text NOT NULL UNIQUE,
+	prod integer references products(id)
 );
+
 
 CREATE TABLE paymethod(
 	methods Text PRIMARY KEY

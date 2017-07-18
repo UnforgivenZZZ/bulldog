@@ -7,22 +7,53 @@
 <title>Upload page</title>
 </head>
 <body>
-<form>
+
+<center>
+<form action="upload" method="post" enctype='multipart/form-data'>
+	<input type="text" name="sku" placeholder="series number"/>
+	<input type="text" name="prodname" placeholder="product name"/>
+	<input type="number" name="price"  placeholder="price"/>
+	
+	<textarea rows="4" cols="50" name="descript">
+	</textarea>
+	
+ 	<input type="file" name="cover_file" placeholder="cover picture"/><br/>
+ 	<input type="file" name="file" placeholder="subpicture" multiple"/><br/>
+	<input type="submit" value="add product"/>
+</form>
+</center>
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!--ajax for future use  -->
+<!-- <form>
 <div class="centered">
- <h2 style="text-align:center;">Asynchronous(AJAX Style) File upload in Java Web Application</h2>
- <p style="text-align:center;">Demo by Priya Darshini - Tutorial @ <a href="http://www.programming-free.com/2013/06/ajax-file-upload-java-iframe.html">Programmingfree</a></p>                                   
- <input type="file" name="datafile" multiple/><br/>
+ <h2 style="text-align:center;">sub pictures</h2>
+ <input type="file" name="cover_file"/><br/>
  <div id="upload" style="display:none;">Uploading..</div>
 </div>
-</form>
+</form> -->
 	
 
 
 <script src="/bulldog/js/jquery-1.8.2.js"></script>
 <script src="/bulldog/js/jquery.ajaxfileupload.js"></script>
 <script language="Javascript">
-$(document).ready(function(){	
-	 $('input[type="file"]').ajaxfileupload({
+/* $(document).ready(function(){	 
+	 $('#ipt').ajaxfileupload({
 	      'action': 'upload',	      	    
 	  'onComplete': function(response) {	        
 	        $('#upload').hide();
@@ -32,8 +63,5 @@ $(document).ready(function(){
 	        $('#upload').show(); 
 	      }
 	 });
-});
+});  */
 </script>
-</body>
-
-</html>
