@@ -13,25 +13,23 @@ public class product {
 	private double DelieverFee;	
 	private String Descript;			
 	private int Seller;	
-	private int Categ;	
+	private int Categ;
+	private String Date;
 	
 
 
-	public product(int id, String sku, String picurl, String name, String pict,
-			double price, double delieverFee, String descript, int seller,
-			int categ) {
-		super();
-		this.id = id;
-		this.sku = sku;
-		this.picurl = picurl;
-		this.name = name;
-		this.pict = pict;
-		this.price = price;
-		DelieverFee = delieverFee;
-		Descript = descript;
-		Seller = seller;
-		Categ = categ;
+	public String getDate() {
+		return Date;
 	}
+
+
+
+	public void setDate(String date) {
+		Date = date;
+	}
+
+
+
 
 
 
@@ -149,15 +147,56 @@ public class product {
 
 
 
+	public product(int id, String sku, String picurl, String name, String pict,
+			double price, double delieverFee, String descript, int seller,
+			int categ, String date) {
+		super();
+		this.id = id;
+		this.sku = sku;
+		this.picurl = picurl;
+		this.name = name;
+		this.pict = pict;
+		this.price = price;
+		DelieverFee = delieverFee;
+		Descript = descript;
+		Seller = seller;
+		Categ = categ;
+		Date = date;
+	}
+
+
+
+	public product(int id, String sku, String picurl, String name, String pict,
+			double price, double delieverFee, String descript, int seller,
+			int categ) {
+		super();
+		this.id = id;
+		this.sku = sku;
+		this.picurl = picurl;
+		this.name = name;
+		this.pict = pict;
+		this.price = price;
+		DelieverFee = delieverFee;
+		Descript = descript;
+		Seller = seller;
+		Categ = categ;
+		Date = "none";
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "product [id=" + id + ", sku=" + sku + ", picurl=" + picurl
 				+ ", name=" + name + ", pict=" + pict + ", price=" + price
 				+ ", DelieverFee=" + DelieverFee + ", Descript=" + Descript
-				+ ", Seller=" + Seller + ", Categ=" + Categ + "]";
+				+ ", Seller=" + Seller + ", Categ=" + Categ + ", Date=" + Date
+				+ "]";
 	}
-	
-	
+
+
+
+
 	
 	
 	

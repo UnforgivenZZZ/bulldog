@@ -54,9 +54,10 @@ public class ProductDbUtil {
 				String Descript = myRs.getString("descript");			
 				int Seller = myRs.getInt("seller");	
 				int Categ = myRs.getInt("categ");
+				String Date = myRs.getString("postdate");
 				
 				//create new product object
-				product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ);
+				product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ, Date);
 				
 				//add it to the list of products
 				productList.add(theProduct);
@@ -64,7 +65,7 @@ public class ProductDbUtil {
 			}
 			return productList;
 		}
-		
+
 		
 		finally{
 			//close JDBC objects
@@ -185,9 +186,9 @@ public class ProductDbUtil {
 				String Descript = myRs.getString("descript");			
 				int Seller = myRs.getInt("seller");	
 				int Categ = myRs.getInt("categ");
-				
+				String Date = myRs.getString("postdate");
 				//create a new product object
-				theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ);
+				theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ,Date);
 				
 			}
 			else{
@@ -334,9 +335,9 @@ public class ProductDbUtil {
 				String Descript = myRs.getString("descript");			
 				int Seller = myRs.getInt("seller");	
 				int Categ = myRs.getInt("categ");
-				
+				String Date = myRs.getString("postdate");
 				//create a new product object
-				product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ);
+				product theProduct = new product(id,sku,picurl,name,pict,price,DelieverFee,Descript,Seller,Categ,Date);
                 
                 // add it to the list of students
 				products.add(theProduct);           

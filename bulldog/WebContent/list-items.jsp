@@ -57,6 +57,7 @@
 					<th>descript</th>
 					<th>seller</th>
 					<th>categ</th>
+					<th>Date</th>
 					<th>Modify</th>
 				</tr>
 				
@@ -87,6 +88,7 @@
 						<td>${tempProduct.getDescript()}</td>
 						<td>${tempProduct.getSeller()}</td>
 						<td>${tempProduct.getCateg()}</td>
+						<td>${tempProduct.getDate()}</td>
 						<td>
 						
 							<a href = "${tempLink}">Update</a>

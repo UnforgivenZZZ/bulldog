@@ -70,7 +70,7 @@
 
             <tr>
             <!-- change to onlick cannot proces if not working with duplicate -->
-                <td colspan="2" align="center"><input type="Submit" value="Add item" class="save"/></td>
+                <td colspan="2" align="center"><input type="Submit" value="Save" class="save"/></td>
             </tr>
         </table>
         
