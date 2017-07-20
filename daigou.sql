@@ -78,8 +78,6 @@ CREATE TABLE pal(
 	account TEXT NOT NULL
 );
 
-
-
 CREATE TABLE cart(
 	id TEXT PRIMARY KEY,
 	buyer Integer NOT NULL references users(id),
