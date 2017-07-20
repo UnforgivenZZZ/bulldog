@@ -351,8 +351,23 @@
       <hr class="hr--small">
     </div>
 
-    
 
+        <div class="medium-down--hide">
+      <ul class="site-nav">
+        <li>
+          <a href="/cart" class="cart-toggle site-nav__link">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            Cart
+            <span id="cartCount" class="hidden-count">(0)</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      <hr class="hr--small">
+    </div>
+
+  </div>
 <nav class="medium-down--hide" role="navigation">
 
 
@@ -380,6 +395,7 @@
 </ul>
 
       <hr class="hr--small">
+
 
 <ul class="site-nav" id="accessibleNav">
  <li class="dropdown">

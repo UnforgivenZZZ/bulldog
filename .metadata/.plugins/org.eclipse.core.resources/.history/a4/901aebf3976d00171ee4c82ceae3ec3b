@@ -351,7 +351,20 @@
       <hr class="hr--small">
     </div>
 
-
+    <center>
+     <div class="grid-item one-quarter">
+      <a href="/cart" class="cart-toggle">
+      <div class="table-contain">
+        <div class="table-contain__inner">
+          <span class="icon-fallback-text">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="fallback-text">Cart</span>
+          </span>
+        </div>
+      </div>
+      </a>
+    </div>
+    </center>
         <div class="medium-down--hide">
       <ul class="site-nav">
         <li>

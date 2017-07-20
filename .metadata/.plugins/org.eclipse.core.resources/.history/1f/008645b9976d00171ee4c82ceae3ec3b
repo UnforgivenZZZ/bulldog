@@ -351,21 +351,20 @@
       <hr class="hr--small">
     </div>
 
-
-        <div class="medium-down--hide">
-      <ul class="site-nav">
-        <li>
-          <a href="/cart" class="cart-toggle site-nav__link">
+    <ul>
+     <div class="grid-item one-quarter">
+      <a href="/cart" class="cart-toggle">
+      <div class="table-contain">
+        <div class="table-contain__inner">
+          <span class="icon-fallback-text">
             <span class="icon icon-cart" aria-hidden="true"></span>
-            Cart
-            <span id="cartCount" class="hidden-count">(0)</span>
-          </a>
-        </li>
-        
-      </ul>
-
-      <hr class="hr--small">
+            <span class="fallback-text">Cart</span>
+          </span>
+        </div>
+      </div>
+      </a>
     </div>
+    </ul>
 
   </div>
 <nav class="medium-down--hide" role="navigation">
