@@ -29,11 +29,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 public class upload extends HttpServlet {
 	private final String UPLOAD_DIRECTORY = "/Users/jialiangzhou/Desktop/ss1";
 	private static final long serialVersionUID = 1L;
-    /*
-	insert into products(sku,name,price,delieverFee,descript,seller) 
-	Values(?,?,?,?,?,?) returning id --> int id;
-	
-	
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -56,7 +52,7 @@ public class upload extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// compare type
-		int seller = Integer.parseInt(request.getParameter("seller"));
+		
 		if(ServletFileUpload.isMultipartContent(request))
 		{
 			try
@@ -70,9 +66,6 @@ public class upload extends HttpServlet {
 
 			        InputStream fileContent = filePart.getInputStream();
 			        Files.copy(fileContent, file.toPath());
-			        
-			        String pic = UPLOAD_DIRECTORY + fileName;
-			        //insert into image(pic,prod) values(pic,id)
 			    }
 			    
 /*		This part did excatly same as the loop above but i dont know why it doesnt work	*/

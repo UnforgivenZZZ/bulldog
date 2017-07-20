@@ -92,7 +92,7 @@
 
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-  <script src="//cdn.shopify.com/s/files/1/0720/4459/t/4/assets/modernizr.min.js?16771221820700569719" type="text/javascript"></script>
+  <script src="/bulldog/js/modernizr.min.js" type="text/javascript"></script>
   
   
 
@@ -532,28 +532,16 @@
   </div>
 
   
+<!-- product grid begin -->
+<!--  assume in server, get all product information and saved in to a arraylist: request.setAttribute("prods",prod_list);-->
 
-  <div class="grid-uniform product-grid">
+<%/*ArrayList<product> prods = (ArrayList)request.getAttribute("prods");
+	for (....) {*/ %>
+ <div class="grid-uniform product-grid">
     
       
-      <div class="grid-item medium--one-third large--one-third" >
+<div class="grid-item medium--one-third large--one-third" >
         <!-- snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=" on-sale">
   <div class="product-wrapper">
     <a href="/products/perfumeoil-garden" class="product">
@@ -592,8 +580,9 @@
   </div>
 </div>
 
-      </div>
-    
+</div>
+ <!-- product frid end -->
+ <%//} %>   
       
       <div class="grid-item medium--one-third large--one-third" >
         <!-- snippets/product-grid-item.liquid -->
@@ -851,18 +840,7 @@
 
 </div><div id="shopify-section-1480350289228" class="shopify-section index-section"><div class="grid">
   
-    <div class="grid-item page-content__item large--two-thirds push--large--one-sixth" >
-    
-      <div class="section-header section-header--small text-center">
-        <h2 class="section-header__title">Younger looking skin</h2>
-      </div>
-    
-      <div class="rte text-center">
-        
-            <p>Professionals in cosmetics marketing careers manage research focus groups, promote the desired brand image, and provide other marketing services (sales forecasting, allocation to different retailers, etc.).</p>
-          
-      </div>
-    </div>
+
   
 </div>
 
@@ -890,7 +868,7 @@
 
 <footer class="site-footer small--text-center medium--text-center" role="contentinfo">
 
-  <div class="wrapper">
+  <!-- <div class="wrapper">
 
     <hr class="hr--clear large--hide">
 
@@ -1134,7 +1112,7 @@
 
   </div>
 
-</footer>
+</footer> -->
 
 
 </div>

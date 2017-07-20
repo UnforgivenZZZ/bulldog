@@ -7,34 +7,53 @@
 <title>Upload page</title>
 </head>
 <body>
+<% Integer admin = session.getAttribute("admin_id") == null ? -1 : (Integer) session.getAttribute("admin_id"); %>
 
 <center>
-<form action="upload" method="post" enctype='multipart/form-data'>
-	<input type="text" name="user"/>
- 	<input type="file" name="file" multiple/><br/>
-
-	<input type="submit" value="sub"/>
- 	<div id="upload" style="display:none;">Uploading..</div>
+<form action="upload?seller=<%=admin %>" method="post" enctype='multipart/form-data'>
+	<input type="text" name="user" placeholder="series number"/>
+	<input type="text" name="prodname" placeholder="product name"/>
+	<input type="number" name="price"  placeholder="price"/>
+	
+	<textarea rows="4" cols="50" name="descript">
+	</textarea>
+	
+ 	<input type="file" name="cover_file" placeholder="cover picture"/><br/>
+ 	<input type="file" name="file" placeholder="subpicture" multiple/><br/>
+	<input type="submit" value="add product"/>
 </form>
 </center>
 
 
 
 
-<form id="sub_pics">
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!--ajax for future use  -->
+<!-- <form>
 <div class="centered">
  <h2 style="text-align:center;">sub pictures</h2>
- <input type="file" name="file" multiple id="ipt"/><br/>
+ <input type="file" name="cover_file"/><br/>
  <div id="upload" style="display:none;">Uploading..</div>
 </div>
-</form>
+</form> -->
 	
 
 
 <script src="/bulldog/js/jquery-1.8.2.js"></script>
 <script src="/bulldog/js/jquery.ajaxfileupload.js"></script>
 <script language="Javascript">
-$(document).ready(function(){	 
+/* $(document).ready(function(){	 
 	 $('#ipt').ajaxfileupload({
 	      'action': 'upload',	      	    
 	  'onComplete': function(response) {	        
@@ -45,8 +64,5 @@ $(document).ready(function(){
 	        $('#upload').show(); 
 	      }
 	 });
-}); 
+});  */
 </script>
-</body>
-
-</html>

@@ -7,11 +7,10 @@
 <title>Upload page</title>
 </head>
 <body>
-<% Integer admin = session.getAttribute("admin_id") == null ? -1 : (Integer) session.getAttribute("admin_id"); %>
 
 <center>
-<form action="upload?seller=<%=admin %>" method="post" enctype='multipart/form-data'>
-	<input type="text" name="user" placeholder="series number"/>
+<form action="upload" method="post" enctype='multipart/form-data'>
+	<input type="text" name="sku" placeholder="series number"/>
 	<input type="text" name="prodname" placeholder="product name"/>
 	<input type="number" name="price"  placeholder="price"/>
 	
@@ -19,7 +18,7 @@
 	</textarea>
 	
  	<input type="file" name="cover_file" placeholder="cover picture"/><br/>
- 	<input type="file" name="file" placeholder="subpicture" multiple/><br/>
+ 	<input type="file" name="file" placeholder="subpicture" multiple"/><br/>
 	<input type="submit" value="add product"/>
 </form>
 </center>

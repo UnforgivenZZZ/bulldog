@@ -532,16 +532,28 @@
   </div>
 
   
-<!-- product grid begin -->
-<!--  assume in server, get all product information and saved in to a arraylist: request.setAttribute("prods",prod_list);-->
 
-<%/*ArrayList<product> prods = (ArrayList)request.getAttribute("prods");
-	for (....) {*/ %>
- <div class="grid-uniform product-grid">
+  <div class="grid-uniform product-grid">
     
       
-<div class="grid-item medium--one-third large--one-third" >
+      <div class="grid-item medium--one-third large--one-third" >
         <!-- snippets/product-grid-item.liquid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=" on-sale">
   <div class="product-wrapper">
     <a href="/products/perfumeoil-garden" class="product">
@@ -580,9 +592,8 @@
   </div>
 </div>
 
-</div>
- <!-- product frid end -->
- <%//} %>   
+      </div>
+    
       
       <div class="grid-item medium--one-third large--one-third" >
         <!-- snippets/product-grid-item.liquid -->
