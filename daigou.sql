@@ -60,21 +60,22 @@ create table images(
 
 
 CREATE TABLE paymethod(
-	methods Text PRIMARY KEY
+	id serial primary key,
+	method Text NOT NULL PRIMARY KEY,
+	owner INTEGER NOT NULL references users(id)
 );
 
 CREATE TABLE card(
 	id SERIAL PRIMARY KEY,
+	card_num integer NOT NULL references paymethod(id),
 	holder Text NOT NULL,
-	cardnum TEXT NOT NULL,
 	month INTEGER NOT NULL,
-	year INTEGER NOT NULL,
-	owner INTEGER references users(id)
+	year INTEGER NOT NULL
 );
 CREATE TABLE pal(
 	id SERIAL PRIMARY KEY,
-	account TEXT NOT NULL,
-	owner INTEGER references users(id)
+	pal_account integer NOT NULL references paymethod(id),
+	account TEXT NOT NULL
 );
 
 
@@ -83,7 +84,7 @@ CREATE TABLE cart(
 	id TEXT PRIMARY KEY,
 	buyer Integer NOT NULL references users(id),
 	purchaseDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (now() AT TIME ZONE 'UTC'),
-	method Text NOT NULL references paymethod(methods),
+	method integer NOT NULL references paymethod(methods),
 	address INTEGER NOT NULL references address(id)
 );
 
@@ -99,14 +100,6 @@ CREATE TABLE orders(
 
 );
 
-CREATE TABLE cardrecip(
-	cart TEXT NOT NULL references cart(id),
-	card INTEGER NOT NULL references card(id)
-);
-CREATE TABLE paypalrecip(
-	cart TEXT NOT NULL references cart(id),
-	account INTEGER NOT NULL references pal(id)
-);
 
 
 
